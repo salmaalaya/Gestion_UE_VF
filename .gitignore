@@ -1,0 +1,9 @@
+target/
+out/
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.DS_Store
+.env
