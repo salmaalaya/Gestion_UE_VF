@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    color: #333;
+}
+
+header {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+nav,
+#loginForm,
+#logged {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#session {
+    margin-top: 15px;
+}
+
+main {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 16px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #667eea;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(0.92);
+}
+
+button.secondary,
+nav button {
+    background: #eef0fb;
+    color: #4a4fa3;
+}
+
+nav button.active {
+    background: #667eea;
+    color: white;
+}
+
+button.danger {
+    background: #d64545;
+}
+
+input,
+select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: white;
+    color: #333;
+    min-width: 0;
+}
+
+input:disabled {
+    background: #f1f1f1;
+}
+
+.table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    color: #666;
+    font-weight: 600;
+}
+
+.row-actions {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+}
+
+.row-actions button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+.empty {
+    text-align: center;
+    color: #777;
+    padding: 25px;
+}
+
+form.auth-only {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+form.auth-only h3,
+.actions {
+    grid-column: 1 / -1;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+#message {
+    padding: 10px 16px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+#message.success {
+    background: #e3f6e8;
+    color: #1d6b34;
+}
+
+#message.error {
+    background: #fde8e8;
+    color: #a12626;
+}

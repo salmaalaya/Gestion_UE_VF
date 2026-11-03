@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion UE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>🎓 Gestion des Unités d'Enseignement</h1>
+    <nav>
+        <button id="tabUE" class="active" type="button">Unités d'enseignement</button>
+        <button id="tabModules" type="button">Modules</button>
+    </nav>
+    <div id="session">
+        <form id="loginForm">
+            <input id="username" placeholder="Utilisateur" autocomplete="username" required>
+            <input id="password" type="password" placeholder="Mot de passe" autocomplete="current-password" required>
+            <button type="submit">Se connecter</button>
+        </form>
+        <div id="logged" hidden>
+            <span>Connectée</span>
+            <button id="logout" class="secondary" type="button">Se déconnecter</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <p id="message" role="status" hidden></p>
+
+    <section id="pageUE" class="card">
+        <div class="title">
+            <h2>Unités d'enseignement</h2>
+            <select id="filterSemestre" aria-label="Filtrer par semestre">
+                <option value="">Tous les semestres</option>
+                <option value="1">Semestre 1</option>
+                <option value="2">Semestre 2</option>
+            </select>
+        </div>
+        <div class="table">
+            <table>
+                <thead>
+                <tr><th>Code</th><th>Domaine</th><th>Responsable</th><th>Crédits</th><th>Semestre</th><th></th></tr>
+                </thead>
+                <tbody id="ueRows"></tbody>
+            </table>
+        </div>
+        <form id="ueForm" class="auth-only" hidden>
+            <h3 id="ueFormTitle">Ajouter une UE</h3>
+            <input id="ueCode" type="number" min="1" placeholder="Code" aria-label="Code" required>
+            <input id="ueDomaine" placeholder="Domaine" aria-label="Domaine" required>
+            <input id="ueResponsable" placeholder="Responsable" aria-label="Responsable" required>
+            <input id="ueCredits" type="number" min="1" placeholder="Crédits" aria-label="Crédits" required>
+            <input id="ueSemestre" type="number" min="1" placeholder="Semestre" aria-label="Semestre" required>
+            <div class="actions">
+                <button type="submit">Enregistrer</button>
+                <button id="ueCancel" class="secondary" type="button">Annuler</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="pageModules" class="card" hidden>
+        <div class="title">
+            <h2>Modules</h2>
+            <select id="filterUE" aria-label="Filtrer par UE"></select>
+        </div>
+        <div class="table">
+            <table>
+                <thead>
+                <tr><th>Matricule</th><th>Nom</th><th>Coef.</th><th>Volume (h)</th><th>Type</th><th>UE</th><th></th></tr>
+                </thead>
+                <tbody id="moduleRows"></tbody>
+            </table>
+        </div>
+        <form id="moduleForm" class="auth-only" hidden>
+            <h3 id="moduleFormTitle">Ajouter un module</h3>
+            <input id="moduleMatricule" placeholder="Matricule" aria-label="Matricule" required>
+            <input id="moduleNom" placeholder="Nom" aria-label="Nom" required>
+            <input id="moduleCoefficient" type="number" min="1" placeholder="Coefficient" aria-label="Coefficient" required>
+            <input id="moduleVolume" type="number" min="1" placeholder="Volume horaire" aria-label="Volume horaire" required>
+            <select id="moduleType" aria-label="Type">
+                <option>COURS</option>
+                <option>TD</option>
+                <option>TP</option>
+            </select>
+            <select id="moduleUE" aria-label="UE" required></select>
+            <div class="actions">
+                <button type="submit">Enregistrer</button>
+                <button id="moduleCancel" class="secondary" type="button">Annuler</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
